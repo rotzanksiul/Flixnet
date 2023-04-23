@@ -1,0 +1,72 @@
+/* Row Styles */
+
+.row{
+    margin: 2rem 1.25rem;
+}
+
+
+.row-images{
+    display: grid;
+    gap: 1rem;
+    padding: .75rem;
+}
+
+.row-images-link{
+    text-decoration: none;
+    display: flex;
+}
+
+
+
+.row-image{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    box-shadow: rgba(0,0,0,0.7) 0 15px 25px -10px, rgba(0,0,0,0.5) 0 9px 8px -10px;
+    border-radius: 4px;
+    transition: all 250ms ease;
+}
+
+.row-image:hover{
+   scale: 1.05;
+}
+
+
+
+
+
+/* Queries */
+
+
+@media screen and (min-width: 350px) {
+    .row-images{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media screen and (min-width: 600px) {
+    .row-images{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .row-images{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .row-images{
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .row-images{
+        grid-template-columns: repeat(6,1fr);
+    }
+}
+
+

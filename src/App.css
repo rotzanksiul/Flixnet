@@ -1,0 +1,298 @@
+:root {
+  --font-base: 'Rubik';
+  --font-title: 'Sigmar';
+  --color-black: #1A1B23;
+  --color-dark: #232834;
+  --color-green: #2A7C71;
+  --color-lightgreen: #4dd6c4;
+  --color-white: #FFFFFF;
+  --gradient-direction: to right;
+  --gradient: rgb(46, 84, 117);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--color-black);
+}
+
+
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Rubik';
+  src: url(./fonts/Rubik-Light.ttf);
+}
+
+
+@font-face {
+  font-family: 'Sigmar';
+  src: url(./fonts/Sigmar-Regular.ttf);
+}
+
+/* variables and classes */
+
+/* use mostly in main page intro */
+
+.h2-grotesk {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1.50rem;
+
+}
+
+.p-base {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+}
+
+.headtext {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+}
+
+/* use mostly in Movie details */
+.movie-title {
+  font-family: var(--font-title);
+  color: var(--color-white);
+  font-size: 2.3rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+}
+
+.movie-base {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 150;
+  letter-spacing: 0.04em;
+  font-size: 1.1rem;
+}
+
+.movie-base-tag {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 150;
+  letter-spacing: 0.04em;
+  font-size: .8rem;
+}
+
+.movie-base-tag:nth-child(1n+2)::before {
+  content: '·';
+  margin-right: 0.5em;
+  display: inline-block;
+}
+
+.movie-base-genre {
+  font-family: var(--font-base);
+  color: var(--color-white);
+  font-weight: 150;
+  letter-spacing: 0.04em;
+  font-size: .85rem;
+}
+
+
+/* Links color */
+
+.base-link{
+  color: var(--color-lightgreen);
+}
+
+.base-link:hover{
+  text-decoration: underline;
+}
+
+
+/* Custom button in details */
+
+.custom-button {
+  background-color: var(--color-white);
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  transition: all 450ms ease;
+}
+
+.custom-button:hover {
+  background-color: var(--color-green);
+  scale: 1.05;
+}
+
+/* Banner background classes */
+
+
+.bg-wrapper {
+  min-height: 60vh;
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  background: linear-gradient(90deg, rgba(46, 84, 117, 1) 44%, rgba(46, 84, 117, 1) 47%, rgba(46, 84, 117, 1) 100%);
+}
+
+
+
+
+
+.bg-wrapper-content {
+  width: 50%;
+  display: flex;
+  text-align: start;
+  align-items: end;
+  padding: 0rem 3rem;
+  padding-bottom: 6rem;
+  position: relative;
+  z-index: 2;
+
+}
+
+
+.bg-wrapper-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 70%;
+  z-index: 1;
+  background-size: cover;
+  background-position: center center;
+  object-fit: fill;
+
+
+}
+
+
+/* BACKGROUND GRADIENT EFFECT */
+
+.bg-wrapper-image::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  background-image: linear-gradient(to right, var(--gradient) 1%, transparent 40%), repeating-linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
+}
+
+
+
+
+/* Media queries */
+
+
+@media screen and (max-width: 1150px) {
+  .h2-grotesk {
+    font-size: 1.30rem;
+  }
+
+  .p-base {
+    font-size: 1.2rem;
+  }
+
+  .movie-title {
+    font-size: 2.1rem;
+  }
+
+  .movie-base {
+    font-size: 1.1rem;
+  }
+
+}
+
+
+
+@media screen and (max-width: 850px) {
+  .h2-grotesk {
+    font-size: 1.10rem;
+  }
+
+  .headtext {
+    font-size: 2rem;
+  }
+
+  .bg-wrapper {
+    flex-direction: column-reverse;
+
+  }
+
+  .bg-wrapper-image {
+    width: 100%;
+    height: 70%;
+  }
+
+  .bg-wrapper-content {
+    width: 100%;
+    padding: 2rem 4rem;
+    z-index: 2;
+
+  }
+
+  .bg-wrapper-image::after {
+    background-image: linear-gradient(to top, var(--gradient) 1%, transparent 40%), repeating-linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
+  }
+
+}
+
+
+
+@media screen and (max-width: 650px) {
+  .headtext {
+    font-size: 1.8rem;
+
+  }
+
+  .movie-title {
+    font-size: 1.9rem;
+  }
+
+  .movie-base {
+    font-size: .9rem;
+  }
+
+
+}
+
+
+
+@media screen and (max-width: 450px) {
+  .h2-grotesk {
+    font-size: 1.05rem;
+  }
+
+  .headtext {
+    font-size: 1.6rem;
+
+  }
+
+  .p-base {
+    font-size: 1rem;
+  }
+
+  .bg-wrapper-content {
+    padding: 1rem 2rem;
+  }
+
+
+}

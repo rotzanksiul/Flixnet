@@ -1,0 +1,54 @@
+.banner{
+    margin: 2rem 2.5rem;
+}
+
+.banner-content {
+    padding: 0rem 3rem;
+    padding-bottom: 6rem;
+}
+
+
+
+
+
+
+.banner-content-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.70rem;
+}
+
+
+
+
+@media screen and (min-width: 2000px) {
+    .banner-content-info{
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .banner-content-info {
+     flex: 1;
+     width: 50%;
+    }
+    
+    
+    .banner-content {
+        width:100%;
+        padding: 2rem 4rem;
+        z-index: 2;
+    }
+}
+
+
+
+
+@media screen and (max-width: 450px) {
+    .banner-content {
+        padding: 1rem 2rem;
+    }
+}
+
+
