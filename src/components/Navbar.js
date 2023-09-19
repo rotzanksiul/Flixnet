@@ -6,11 +6,11 @@ import './Navbar.css'
 const Navbar = () => {
     return ( 
     <div className="navbar">
-        <Link  to={'/'} className="brand" reloadDocument>
+        <Link  to={'/'} className="brand">
         <img src={iconImg} alt="Brandicon" />
         </Link>
         
-        <Link to={'/user'} className="user-icon" reloadDocument>
+        <Link to={'/user'} className="user-icon">
         <img src={userImg} alt="Usericon" />
         </Link>
     </div> 

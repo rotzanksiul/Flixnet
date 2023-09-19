@@ -32,7 +32,7 @@ const Banner = ({ movies }) => {
                         <p className="banner-content-sinopsis movie-base">
                             {bannerMovie.sinopsis}
                         </p>
-                        <Link to={`/movies/${bannerMovie._id}`} className="custom-button" reloadDocument>Details</Link>
+                        <Link to={`/movies/${bannerMovie._id}`} className="custom-button">Details</Link>
                     </div>
                 )}
             </div>

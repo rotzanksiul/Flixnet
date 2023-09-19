@@ -8,7 +8,7 @@ const SubRow = ({ data, title }) => {
             <h2 className='h2-grotesk'>{title}</h2>
             <div className="row-images">
                 {data.map((movie) => (
-                    <Link to={`/movies/${movie._id}`} className='row-images-link' key={movie._id} reloadDocument>
+                    <Link to={`/movies/${movie._id}`} className='row-images-link' key={movie._id}>
                         <img src={movie.row} alt={movie.title} className='row-image' />
                     </Link>
                 ))}

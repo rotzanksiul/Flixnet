@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className="footer">
             <div className="footer-brand-info">
-                <Link to={'/'} className="footer-brand-link" reloadDocument>
+                <Link to={'/'} className="footer-brand-link">
                     <img src={brand} alt="Flixnet" />
                 </Link>
             </div>
