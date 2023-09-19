@@ -7,9 +7,9 @@ This is the Frond-end repository.
 
 Technologies:
 
-React
-Nodejs
-MongoDB
-ExpressJs
+- React
+- Nodejs
+- MongoDB
+- ExpressJs
 
 Demo: https://flixnet-tan.vercel.app/
