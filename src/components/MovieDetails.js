@@ -14,7 +14,7 @@ const MovieDetails = () => {
 
     // Get the movie based in the id
     const getMovie = () => {
-        Axios.get(`http://localhost:3001/movies/${id}`)
+        Axios.get(`https://flixnet-app-backend.up.railway.app/movies/${id}`)
             .then((response) => {
                 setMovie(response.data)
                 setLoading(false)
@@ -27,7 +27,7 @@ const MovieDetails = () => {
 
     //Get all movies
     const getMovies = () => {
-        Axios.get('http://localhost:3001/movies')
+        Axios.get('https://flixnet-app-backend.up.railway.app/movies')
             .then((response) => {
                 setAllMovies(response.data);
             })

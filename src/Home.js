@@ -16,7 +16,7 @@ const Home = () => {
     const [newOnFlixnetMovies, setNewOnFlixnetMovies] = useState([]);
 
     const getMovies = () => {
-        Axios.get('http://localhost:3001/')
+        Axios.get('https://flixnet-app-backend.up.railway.app/')
             .then((response) => {
                 const allMovies = response.data;
 
