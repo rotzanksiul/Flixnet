@@ -8,17 +8,19 @@ import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import './App.css';
 
 function App() {
-  
+
   return (
     <Router forceRefresh={true}>
       <div className="App">
         <Navbar></Navbar>
-      <Routes>
-      <Route exact path="/" element={<Home></Home>} ></Route>
-      <Route  path="/movies/:id" element={<MovieDetails ></MovieDetails>} ></Route>
-      <Route  path="/user" element={<UserPage></UserPage>} ></Route>
-      </Routes>
-      <Footer></Footer>
+        {/* to scroll to top when changing page */}
+        <ScrollToTop></ScrollToTop>
+        <Routes>
+          <Route exact path="/" element={<Home></Home>} ></Route>
+          <Route path="/movies/:id" element={<MovieDetails ></MovieDetails>} ></Route>
+          <Route path="/user" element={<UserPage></UserPage>} ></Route>
+        </Routes>
+        <Footer></Footer>
       </div>
     </Router>
   );

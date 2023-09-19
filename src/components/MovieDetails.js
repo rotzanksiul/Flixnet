@@ -20,7 +20,7 @@ const MovieDetails = () => {
                 setLoading(false)
             })
             .catch((err) => {
-                console.log(err)
+                console.error(err)
                 setLoading(false)
             })
     }
@@ -32,7 +32,7 @@ const MovieDetails = () => {
                 setAllMovies(response.data);
             })
             .catch((err) => {
-                console.log(err)
+                console.error(err)
             })
     }
 
