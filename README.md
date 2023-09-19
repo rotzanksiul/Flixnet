@@ -1,6 +1,15 @@
-This project has everything I like. Movies, video games, and music references that I got from my favorite shows and video games. I put a lot of time into this app. The app was made using React.
-I am really happy with the result. I used Canva to design the rows and give the rows a better look. And I put a lot of imagination 
-into getting all the movie names and details. Please enjoy it as I did creating it.
+Link for the Back-end repository https://github.com/rotzanksiul/Flixnet-app-backend.
 
-Demo:
-https://flixnet.fun/
+This is a full-stack movie app featuring a collection of fictional films. It is built with multiple technologies like React, Node.js, Express.js, and MongoDB.
+I've used Canva to make the rows and logo designs. I took my time to make all the movies content based on my favorite Games, animes, manga, and TV shows. 
+
+This is the Frond-end repository.
+
+Technologies:
+
+- React
+- Nodejs
+- MongoDB
+- ExpressJs
+
+Demo: https://flixnet-tan.vercel.app/
