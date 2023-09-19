@@ -4,14 +4,12 @@ import MovieDetails from './components/MovieDetails';
 import Footer from './components/Footer';
 import UserPage from './components/UserPage';
 
-
 import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import './App.css';
 
 //changesf
 function App() {
-
-    
+  
   return (
     <Router forceRefresh={true}>
       <div className="App">
@@ -24,7 +22,6 @@ function App() {
       <Footer></Footer>
       </div>
     </Router>
-
   );
 }
 

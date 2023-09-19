@@ -114,17 +114,15 @@ body {
   font-size: .85rem;
 }
 
-
 /* Links color */
 
-.base-link{
+.base-link {
   color: var(--color-lightgreen);
 }
 
-.base-link:hover{
+.base-link:hover {
   text-decoration: underline;
 }
-
 
 /* Custom button in details */
 
@@ -142,7 +140,6 @@ body {
 
 /* Banner background classes */
 
-
 .bg-wrapper {
   min-height: 60vh;
   max-width: 100%;
@@ -150,10 +147,6 @@ body {
   position: relative;
   background: linear-gradient(90deg, rgba(46, 84, 117, 1) 44%, rgba(46, 84, 117, 1) 47%, rgba(46, 84, 117, 1) 100%);
 }
-
-
-
-
 
 .bg-wrapper-content {
   width: 50%;
@@ -179,9 +172,7 @@ body {
   background-position: center center;
   object-fit: fill;
 
-
 }
-
 
 /* BACKGROUND GRADIENT EFFECT */
 
@@ -196,11 +187,14 @@ body {
   background-image: linear-gradient(to right, var(--gradient) 1%, transparent 40%), repeating-linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0) 2px, rgba(0, 0, 0, 0) 4px);
 }
 
-
+.loading-message {
+  display: flex;
+  width: 100%;
+  padding: 2rem 1rem;
+}
 
 
 /* Media queries */
-
 
 @media screen and (max-width: 1150px) {
   .h2-grotesk {
@@ -220,8 +214,6 @@ body {
   }
 
 }
-
-
 
 @media screen and (max-width: 850px) {
   .h2-grotesk {
@@ -255,8 +247,6 @@ body {
 
 }
 
-
-
 @media screen and (max-width: 650px) {
   .headtext {
     font-size: 1.8rem;
@@ -273,8 +263,6 @@ body {
 
 
 }
-
-
 
 @media screen and (max-width: 450px) {
   .h2-grotesk {

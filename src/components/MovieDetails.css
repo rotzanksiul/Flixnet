@@ -15,8 +15,6 @@
     gap: 1rem;
 }
 
-
-
 @media screen and (min-width: 2000px) {
     .moviedetails-content-info{
         max-width: 50%;

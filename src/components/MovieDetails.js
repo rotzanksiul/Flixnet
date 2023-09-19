@@ -1,44 +1,78 @@
-import { useParams } from "react-router-dom";
-import movies from '../data/dataAll'
 import SubRow from "./SubRow";
 
+import Axios from 'axios'
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
 import './MovieDetails.css'
+
 
 const MovieDetails = () => {
     const { id } = useParams();
+    const [movie, setMovie] = useState();
+    const [loading, setLoading] = useState(true);
+    const [allMovies, setAllMovies] = useState([]);
 
-    // Get the Object info using id
-    const movie = movies.find(movie => movie.id === parseInt(id))
+    // Get the movie based in the id
+    const getMovie = () => {
+        Axios.get(`http://localhost:3001/movies/${id}`)
+            .then((response) => {
+                setMovie(response.data)
+                setLoading(false)
+            })
+            .catch((err) => {
+                console.log(err)
+                setLoading(false)
+            })
+    }
 
-    // Get movies recommendations  using the filter properties and pass it as props
-    const recommendedMovies = movies.filter(recommended => recommended !== movie && recommended.filter === movie.filter);
+    //Get all movies
+    const getMovies = () => {
+        Axios.get('http://localhost:3001/movies')
+            .then((response) => {
+                setAllMovies(response.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    useEffect(() => {
+        getMovie();
+        getMovies();
+    }, [id])
+
+    //Filter the movies to give the recommendations based in genre
+    const recommendedMovies = allMovies.filter((m) => m._id !== movie._id && m.genre.includes(movie.genre[0]))
 
     return (
         <div className="details">
-            <div className=" bg-wrapper moviedetails">
-                <div className="moviedetails-content bg-wrapper-content">
-                    <div className="moviedetails-content-info ">
-                        <h2 className="movie-title">{movie.title}</h2>
-
-                        <div className="movie-tags">
-                            <span className="movie-base-tag">{movie.rating}</span>
-                            <span className="movie-base-tag">{movie.type}</span>
-                            <span className="movie-base-tag">{movie.duration}</span>
+            {loading ? (
+                <div className="loading-message">
+                    <p>Loading...</p>
+                </div>
+            ) : (
+                <div className=" bg-wrapper moviedetails">
+                    <div className="moviedetails-content bg-wrapper-content">
+                        <div className="moviedetails-content-info ">
+                            <h2 className="movie-title">{movie.title}</h2>
+                            <div className="movie-tags">
+                                <span className="movie-base-tag">{movie.rating}</span>
+                                <span className="movie-base-tag">{movie.type}</span>
+                                <span className="movie-base-tag">{movie.duration}</span>
+                            </div>
+                            <p className="movie-base">{movie.sinopsis}</p>
+                            <hr className="line" />
+                            <p className="movie-base-genre"><strong>Genre:</strong> {movie.genre.join(', ')}</p>
                         </div>
+                    </div>
 
-                        <p className="movie-base">{movie.sinopsis}</p>
-                        <hr className="line" />
-                        <p className="movie-base-genre"><strong>Genre: </strong>{movie.genrer}</p>
+                    <div className="banner-background bg-wrapper-image" style={{ backgroundImage: `url(${movie.cover})` }} >
+
                     </div>
                 </div>
-
-                <div className="banner-background bg-wrapper-image" style={{ backgroundImage: `url(${movie.cover})` }} >
-
-                </div>
-            </div>
+            )}
             <SubRow data={recommendedMovies} title='You might also like' ></SubRow>
         </div>
-
     );
 }
 

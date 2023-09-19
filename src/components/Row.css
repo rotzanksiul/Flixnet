@@ -4,7 +4,6 @@
     margin: 2rem 1.25rem;
 }
 
-
 .row-images{
     display: grid;
     gap: 1rem;
@@ -15,8 +14,6 @@
     text-decoration: none;
     display: flex;
 }
-
-
 
 .row-image{
     object-fit: cover;
@@ -30,10 +27,6 @@
 .row-image:hover{
    scale: 1.05;
 }
-
-
-
-
 
 /* Queries */
 

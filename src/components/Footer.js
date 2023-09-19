@@ -4,11 +4,6 @@ import brand from '../movieimg/brand.png'
 import './Footer.css'
 
 const Footer = () => {
-
-    const handleClick = () =>{
-        window.scrollTo(0, 0);
-    }
-
     return (
         <div className="footer">
             <div className="footer-brand-info">
