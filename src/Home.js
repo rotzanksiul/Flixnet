@@ -33,7 +33,7 @@ const Home = () => {
                 setMovies(allMovies);
 
                 //Movies for the first row
-                const newMovies = allMovies.slice(36,48)
+                const newMovies = allMovies.slice(38,42)
                 setNewOnFlixnetMovies(newMovies);
             })
             .catch((err) => {
